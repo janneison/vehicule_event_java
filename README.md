@@ -15,3 +15,26 @@ mvn package
 ```
 mvn spring-boot:run
 ```
+
+## Endpoint
+
+El servicio expone un endpoint `POST /process-vehicle-event` que recibe un evento en el formato utilizado por `VehicleEventMS`. Se requiere la cabecera `X-API-Key` configurada mediante la propiedad `api.key`.
+
+Ejemplo de petición:
+
+curl -X POST http://localhost:8080/process-vehicle-event \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: changeme" \
+  -d '{
+    "tipo": 0,
+    "idveh": "ABC123",
+    "idevento_": 1,
+    "fechasys_": "2024-05-01",
+    "speed": 45.0,
+    "lat": "N10.12345",
+    "lon": "W074.98765",
+    "ip": "127.0.0.1",
+    "port": 5050,
+    "fechakeep": "2024-05-01T12:00:00"
+  }'
+
