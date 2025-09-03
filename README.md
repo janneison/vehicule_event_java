@@ -22,7 +22,6 @@ El servicio expone un endpoint `POST /process-vehicle-event` que recibe un event
 
 Ejemplo de petición:
 
-```bash
 curl -X POST http://localhost:8080/process-vehicle-event \
   -H "Content-Type: application/json" \
   -H "X-API-Key: changeme" \
@@ -38,4 +37,4 @@ curl -X POST http://localhost:8080/process-vehicle-event \
     "port": 5050,
     "fechakeep": "2024-05-01T12:00:00"
   }'
-```
+
